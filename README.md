@@ -1,19 +1,21 @@
 # BBQBuddy
 a Arduino based, DYI Bluetooth BBQ thermometer
 
-![Logo](/app/src/main/res/mipmap-xxxhdpi/bbq.png)
+<img src="/app/src/main/res/mipmap-xxxhdpi/bbq.png">
 
 ## Overview
 ### Android App
-![Main](/Media/current.png =250x) ![Graph](/Media/graph_portrait.png =250x)
-![Menu](/Media/menu.png =250x) ![Settings](/Media/settings.png =250x)
+<img src="/Media/current.png" width="250">
+<img src="/Media/graph_portrait.png" width="250">
+<img src="/Media/menu.png" width="250">
+<img src="/Media/settings.png" width="250">
 
 ### Hardware
-![Case](/Media/casing.jpg)
+<img src="/Media/casing.jpg">
 
 ## Build 
 ### Schematic
-![Schematic](/Media/bbqbuddy_schematic.jpg)
+<img src="/Media/bbqbuddy_schematic.jpg">
 
 ### Bill of Materials
 
