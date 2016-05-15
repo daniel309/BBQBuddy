@@ -1,7 +1,7 @@
 # BBQBuddy
+a Arduino based DYI Bluetooth BBQ thermometer
 
-DYI, Arduino-based Bluetooth BBQ thermometer
-
+![Logo](/app/src/main/res/mipmap-xxxhdpi/bbq.png)
 
 TODO
 * schematic
