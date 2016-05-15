@@ -4,10 +4,10 @@ a Arduino based, DYI Bluetooth BBQ thermometer
 
 ## Overview
 ### Android App
-![Main](/Media/current.jpg)
-![Graph](/Media/graph_portrait.jpg)
-![Menu](/Media/menu.jpg)
-![Settings](/Media/settings.jpg)
+![Main](/Media/current.png)
+![Graph](/Media/graph_portrait.png)
+![Menu](/Media/menu.png)
+![Settings](/Media/settings.png)
 
 ### Hardware
 ![Case](/Media/casing.jpg)
@@ -19,6 +19,6 @@ a Arduino based, DYI Bluetooth BBQ thermometer
 ### Bill of Materials
 
 ### Case
-![Case](/Media/casing.jpg)
+* TODO: CAD screen
 * TODO: link to .dxf
 
