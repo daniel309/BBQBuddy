@@ -1,5 +1,5 @@
 # BBQBuddy
-a Arduino based, DYI Bluetooth BBQ thermometer
+an Arduino based, DYI Bluetooth BBQ thermometer
 
 <img src="/app/src/main/res/mipmap-xxxhdpi/bbq.png">
 
@@ -35,16 +35,17 @@ DC-DC Converter
 * https://www.pololu.com/product/2564
 
 Maverick ET-72/73 Heat Sensors (Thermistor)
-* You can buy them as replacement parts for the Maverick ET-71, ET-72 or ET-73 BBQ Thermometer
+* You need two of those
+* Buy them as replacement parts for the Maverick ET-71, ET-72 or ET-73 BBQ thermometer
 * Easy to find in your local BBQ shop or on Amazon or Ebay
 * Background: https://github.com/CapnBry/HeaterMeter/wiki/HeaterMeter-Probes
 
 Passive elements
 * 2x 100nF (ceramic)
 * 1x 100uF (electrolyte)
-* 2x Resistor 18k, **1%**
-* 1x 10k, 5%
-* 8x 330, 5%
+* 2x 18k Resistor, **1%**
+* 1x 10k Resistor, 5%
+* 8x 330 Resistor, 5%
 * 2x 2.5mm mono socket
 * 2x AA NiMH cell
 * 1x On-Off switch (print version)
