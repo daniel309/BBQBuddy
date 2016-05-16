@@ -31,6 +31,8 @@ an Arduino based, DYI Bluetooth BBQ thermometer with 2 probes (supports up to 4)
 ### Bill of Materials
 AVR
 * Sparkfun Arduino Pro Micro - 5v/16Mhz
+* Make sure to bridge jumper J1, we will be using a separate power supply, no need to waste energy and go through the internal 5v regulator 
+  * Background: http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Dev/Arduino/Boards/Pro_Micro_v13.pdf
 * https://www.sparkfun.com/products/12640
 
 Multiplexing 7-Segment Display
@@ -40,7 +42,7 @@ Multiplexing 7-Segment Display
 HC-05 Bluetooth Module
 * Find these on Ebay or AliExpress
 
-DC-DC Converter
+DC-DC Step-Up Converter
 * Pololu U1V10F5
 * https://www.pololu.com/product/2564
 
@@ -65,7 +67,7 @@ Passive elements
 * 8x Mainboard/Circuit-board spacer, M3, 15mm
 
 ### Casing
-* TODO: CAD screen
+* TODO: CAD screenshot
 * TODO: .dxf
 * http://plexilaser.de/
 
