@@ -20,12 +20,12 @@ an Arduino based, DYI Bluetooth BBQ thermometer with 2 probes (supports up to 4)
 
 ### AVR Code
 * Follow Sparkfun's hookup guide to install the board file for Arduino IDE
-** https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide
+  * https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide
 * Load the Arduino code
-** First, copy the following libraries to your libraries folder
-** [Libraries](/Arduino/libraries)
-** Then, load the project's AVR code
-** [AVR Code](/Arduino/bbqbuddy.ino)
+  * First, copy the following libraries to your libraries folder
+  * [Libraries](/Arduino/libraries)
+  * Then, load the project's AVR code
+  * [AVR Code](/Arduino/bbqbuddy.ino)
 * Connect the micro via USB, compile and transfer
 
 ### Bill of Materials
@@ -60,6 +60,7 @@ Passive elements
 * 2x AA NiMH cell
 * 1x On/Off switch (print version)
 * 1x Battery case for 2x AA cells
+* 1x Your favorite stripboard, 2.54mm
 * 8x M3 bolts, DIN 965, 10mm
 * 8x Mainboard/Circuit-board spacer, M3, 15mm
 
