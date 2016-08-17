@@ -87,4 +87,4 @@ Passive elements
   * Mine was cut by http://plexilaser.de/, which I highly recommend. 
 
 ## First Use
-When you start the thermometer for the first time, look for a Bluetooth device named "HC-05" on your phone, and pair it with pin "1234". When you start the thermometer app, it will automatically connect to a device named HC-05, there is not additional setup required. 
+When you start the thermometer for the first time, look for a Bluetooth device named "HC-05" on your phone, and pair it with pin "1234". When you start the thermometer app, it will automatically connect to the HC-05 device and you are ready to go. 
