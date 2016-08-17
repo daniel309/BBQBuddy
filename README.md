@@ -1,11 +1,22 @@
 # BBQBuddy
-an Arduino based, DYI Bluetooth BBQ thermometer with 2 probes (supports up to 4) and a companion Android App.
+an Arduino based, DYI Bluetooth BBQ thermometer with 2 probes (supports up to 4) and a companion Android app.
 
 <img src="/app/src/main/res/mipmap-xxxhdpi/bbq.png">
 
 ## Overview
 ### Hardware
-<img src="/Media/casing.jpg">
+<img src="/Media/casing.jpg" width="250">
+<img src="/Media/casing2.jpg" width="250">
+
+### Battery Usage
+Here are the measured amps in various situations: 
+* 180 mA: Start, phone not connected via Bluetooth
+* 160 mA: Bluetooth connected, display brightness 100%
+* 130 mA: Bluetooth connected, display brightness 35% (default)
+* 115 mA: Bluetooth connected, display brightness 0%
+*  85 mA: Bluetooth connected, power save mode (for long cooks)
+
+This gives **30h** usage for normal operation mode (130mA) or **47h** in power-save mode (85mA) on 2x 2000mAh Nimh AA cells.
 
 ### Android App
 <img src="/Media/current.png" width="250">
@@ -15,8 +26,11 @@ an Arduino based, DYI Bluetooth BBQ thermometer with 2 probes (supports up to 4)
 
 ## Hardware 
 ### Schematic
-<img src="/Media/bbqbuddy_schematic.jpg">
-(Note: Fritzing did not have the exact same modules I was using. See the BOM below for the exact list of parts)
+<img src="/Media/bbqbuddy_schematic.jpg" width="250">
+(Note: Fritzing did not have the same modules I have, I am using pin-compatible ones. See the bill of materials below for the exact list of parts.)
+
+### Circuit Board
+* TODO: pictures
 
 ### AVR Code
 * Follow Sparkfun's hookup guide to install the board file for Arduino IDE
@@ -67,7 +81,10 @@ Passive elements
 * 8x Mainboard/Circuit-board spacer, M3, 15mm
 
 ### Casing
-* TODO: CAD screenshot
+* TODO: CAD 2D + 3D screenshot
 * TODO: .dxf
-* http://plexilaser.de/
+* To get the case you see in the picture above, sent the .dxf file to your favourite laser-cut service. The exact materials I used, their thickness and color is specified as comments in the .dxf file. 
+  * Mine was cut by http://plexilaser.de/, which I highly recommend. 
 
+## First Use
+When you start the thermometer for the first time, look for a Bluetooth device named "HC-05" on your phone, and pair it with pin "1234". When you start the thermometer app, it will automatically connect to a device named HC-05, there is not additional setup required. 
