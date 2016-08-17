@@ -13,7 +13,7 @@
 
 
     <Spinner
-        android:layout_width="164dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/date_spinner"
         android:spinnerMode="dialog"
@@ -24,10 +24,10 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RESTART"
-        android:id="@+id/start_over_button"
+        android:text="MERGE"
+        android:id="@+id/merge_button"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/delete_button" />
+        android:layout_alignParentEnd="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -36,7 +36,7 @@
         android:text="DELETE"
         android:id="@+id/delete_button"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/date_spinner" />
+        android:layout_toStartOf="@id/merge_button" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/graph"

@@ -31,7 +31,7 @@ import daniel309.bbqbuddy.persistence.TemperatureHistoryManager;
 
 
 public class GraphFragment extends Fragment {
-    public Button mStartOverButton;
+    public Button mMergeButton;
     public Button mDeleteButton;
     public Spinner mDateSpinner;
     public ArrayAdapter<String> mDateSpinnerAdapter;
@@ -56,15 +56,26 @@ public class GraphFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         MainActivity main = (MainActivity) getActivity();
 
-        mStartOverButton = (Button) view.findViewById(R.id.start_over_button);
-        mStartOverButton.setOnClickListener(new View.OnClickListener() {
+        mMergeButton = (Button) view.findViewById(R.id.merge_button);
+        mMergeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TemperatureHistoryManager m = ((MainActivity) getActivity()).mTemperatureHistoryManager;
-                String date = m.getCurrentBBQEventDate(); // save previous date, create new event
-                m.createNewBBQEvent("unused");
-                mDateSpinnerAdapter.insert(date, 1); //add old date one line below the top item
-                mDateSpinner.getOnItemSelectedListener().onItemSelected(null, null, 0, 0); //move to item 0 and refresh graph
+                // merge up
+                if (mDateSpinner.getSelectedItem() != null) {
+                    String selected = mDateSpinner.getSelectedItem().toString();
+
+                    if (!CURRENT_EVENT_LABEL.equals(selected)) { // refresh graph + update spinner
+                        String dateAbove = mDateSpinnerAdapter.getItem(mDateSpinner.getSelectedItemPosition() - 1);
+                        ((MainActivity) getActivity()).mTemperatureHistoryManager.mergeBBQHistoryAndDeleteSourceEvent(dateAbove, selected); // merge dateAbove into selected
+                        mDateSpinner.getOnItemSelectedListener().onItemSelected(null, null, mDateSpinner.getSelectedItemPosition(), 0); // refresh graph with merged currently selected item
+                        if (!CURRENT_EVENT_LABEL.equals(dateAbove)) {
+                            mDateSpinnerAdapter.remove(dateAbove); // remove item above current one from spinner + refresh
+                        }
+                    }
+                    else { // nothing to merge up, refresh graph only
+                        mDateSpinner.getOnItemSelectedListener().onItemSelected(null, null, mDateSpinner.getSelectedItemPosition(), 0); //stay on current item (item 0) and refresh graph
+                    }
+                }
             }
         });
 
@@ -79,7 +90,7 @@ public class GraphFragment extends Fragment {
                     if (!CURRENT_EVENT_LABEL.equals(selected)) { // refresh graph + update spinner
                         mDateSpinner.getOnItemSelectedListener().onItemSelected(null, null,
                                 Math.min(mDateSpinner.getSelectedItemPosition() + 1, mDateSpinner.getCount() - 1),
-                                0); //refresh graph with item one position above current
+                                0); //refresh graph with item one position below current
                         mDateSpinnerAdapter.remove(selected); // remove current item from spinner + refresh
                     }
                     else { //refresh graph only

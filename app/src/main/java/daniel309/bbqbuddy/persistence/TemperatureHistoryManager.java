@@ -109,6 +109,32 @@ public class TemperatureHistoryManager {
         }
     }
 
+    public void mergeBBQHistoryAndDeleteSourceEvent(String sourceEventDate, String destinationEventDate) {
+        long sourceID = getEventIDForDate(sourceEventDate);
+        long destinationID = getEventIDForDate(destinationEventDate);
+
+        if (sourceID != -1 && destinationID != -1) {
+            //merge temperature histories
+            mDatabase.execSQL(
+                    "update " + TemperatureHistoryContract.TemperatureHistory.TABLE_NAME + " set " +
+                            TemperatureHistoryContract.TemperatureHistory.COLUMN_NAME_BBQEVENTID + " = ? " +
+                    "where " +
+                            TemperatureHistoryContract.TemperatureHistory.COLUMN_NAME_BBQEVENTID + " = ? ",
+                    new Long[]{destinationID, sourceID}
+            );
+
+            // delete source event
+            if (!GraphFragment.CURRENT_EVENT_LABEL.equals(sourceEventDate)) {
+                mDatabase.execSQL(
+                        "delete from " + TemperatureHistoryContract.BBQEvents.TABLE_NAME + " where " +
+                                TemperatureHistoryContract.BBQEvents._ID + " = ?",
+                        new Long[]{sourceID}
+                );
+            }
+        }
+    }
+
+
     public ArrayList<String> getAllBBQEventStartTimes() {
         ArrayList<String> ret = new ArrayList<>(20);
 
@@ -301,8 +327,6 @@ public class TemperatureHistoryManager {
         return new AlarmCountdownTimer((int)secsToGo * 1000, 1000, main, probeNo,
                 "Probe " + probeNo + " alarm temperature reached: " + alarmTemp + " °C");
     }
-
-
 
     public long getCurrentBBQEventID() {
         long ret;
