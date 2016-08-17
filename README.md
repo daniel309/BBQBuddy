@@ -5,8 +5,8 @@ an Arduino based, DYI Bluetooth BBQ thermometer with 2 probes (supports up to 4)
 
 ## Overview
 ### Hardware
-<img src="/Media/casing.jpg" width="250">
-<img src="/Media/casing2.jpg" width="250">
+<img src="/Media/casing.jpg" width="400">
+<img src="/Media/casing2.jpg" width="400">
 
 ### Battery Usage
 Here are the measured amps in various situations: 
@@ -26,7 +26,7 @@ This gives **30h** usage for normal operation mode (130mA) or **47h** in power-s
 
 ## Hardware 
 ### Schematic
-<img src="/Media/bbqbuddy_schematic.jpg" width="250">
+<img src="/Media/bbqbuddy_schematic.jpg">
 (Note: Fritzing did not have the same modules I have, I am using pin-compatible ones. See the bill of materials below for the exact list of parts.)
 
 ### Circuit Board
