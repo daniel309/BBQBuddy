@@ -90,10 +90,10 @@ public class GraphFragment extends Fragment {
                     if (!CURRENT_EVENT_LABEL.equals(selected)) { // refresh graph + update spinner
                         mDateSpinner.getOnItemSelectedListener().onItemSelected(null, null,
                                 Math.min(mDateSpinner.getSelectedItemPosition() + 1, mDateSpinner.getCount() - 1),
-                                0); //refresh graph with item one position below current
+                                0); // refresh graph with item one position below current
                         mDateSpinnerAdapter.remove(selected); // remove current item from spinner + refresh
                     }
-                    else { //refresh graph only
+                    else { // refresh graph only
                         mDateSpinner.getOnItemSelectedListener().onItemSelected(null, null, mDateSpinner.getSelectedItemPosition(), 0); //stay on current item (item 0) and refresh graph
                     }
                 }
@@ -110,6 +110,8 @@ public class GraphFragment extends Fragment {
         mDateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                mMergeButton.setEnabled(position > 0); // allow to merge only when not showing the current event
+
                 LineData data = ((MainActivity) getActivity()).mTemperatureHistoryManager.getAllTemperaturesForBBQEvent(
                         mDateSpinnerAdapter.getItem(position), createEmptyLineData(), GraphFragment.this);
                 mGraph.setData(data);

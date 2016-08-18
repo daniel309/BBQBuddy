@@ -24,10 +24,11 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MERGE"
+        android:text="MERGE UP"
         android:id="@+id/merge_button"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textSize="12sp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -36,7 +37,8 @@
         android:text="DELETE"
         android:id="@+id/delete_button"
         android:layout_alignParentTop="true"
-        android:layout_toStartOf="@id/merge_button" />
+        android:layout_toStartOf="@id/merge_button"
+        android:textSize="12sp" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/graph"
